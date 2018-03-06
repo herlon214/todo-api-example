@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=onetwothree
+      - MYSQL_DATABASE=todos
+      - MYSQL_USER=root
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  banking-unlocker:
+    container_name: todo_api_example
+    image: node:8.9.4
+    command: tail -f /dev/null
+    working_dir: /opt/app
+    environment:
+      - TODOS_DB_NAME=todos
+      - TODOS_DB_HOST=localhost
+      - TODOS_DB_USER=root
+      - TODOS_DB_PASS=onetwothree
+      - TODOS_DB_PORT=3306
+    ports:
+      - 8000:8000
+    volumes:
+      - ..:/opt/app
+      - /opt/app/node_modules

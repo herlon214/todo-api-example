@@ -12,7 +12,7 @@ export const server = createServer(
   // Options
   {
     apiPrefix: '/todos/v1',
-    port: 8000
+    port: process.env.PORT
   }
 )
 .then(srv => {

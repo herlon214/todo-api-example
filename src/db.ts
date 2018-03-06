@@ -1,15 +1,15 @@
-import { createPool, Pool, PoolConfig } from 'mysql';
+import { createPool, Pool, PoolConfig } from 'mysql'
 
-const debug = require('debug')('todos');
+const debug = require('debug')('todos')
 
 const connInfo: PoolConfig = {
-  database : process.env.TODOS_DB_NAME || 'todos',
-  host     : process.env.TODOS_DB_HOST || 'localhost',
-  user     : process.env.TODOS_DB_USER || 'root',
-  password : process.env.TODOS_DB_PASS || '',
+  database : process.env.TODOS_DB_NAME,
+  host     : process.env.TODOS_DB_HOST,
+  user     : process.env.TODOS_DB_USER,
+  password : process.env.TODOS_DB_PASS,
   port     : parseInt(process.env.TODOS_DB_PORT) || 3306
-};
+}
 
-debug('Database connection info', connInfo);
+debug('Database connection info', connInfo)
 
-export const ConnectionPool: Pool = createPool(connInfo);
+export const ConnectionPool: Pool = createPool(connInfo)

@@ -1,13 +1,13 @@
-import { Guid } from '@cashfarm/lang';
+import { Guid } from '@cashfarm/lang'
 
 export class Todo {
-  public id: Guid;
-  public done: boolean;
-  public createdAt: Date;
+  public id: Guid
+  public done: boolean
+  public createdAt: Date
 
   constructor(public description?: string) {
-    this.id = new Guid();
-    this.done = false;
-    this.createdAt = new Date();
+    this.id = new Guid()
+    this.done = false
+    this.createdAt = new Date()
   }
 }
