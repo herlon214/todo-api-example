@@ -17,5 +17,5 @@
     "DEBUG": "tractor*,plow*,inversify*",
     "DEBUG_COLORS": true
   },
-  "exec": "node --inspect --trace-warnings --trace-deprecation src/server.js"
+  "exec": "node --inspect --trace-warnings --trace-deprecation lib/server.js"
 }
