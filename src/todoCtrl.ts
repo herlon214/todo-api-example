@@ -1,11 +1,11 @@
-import * as Hapi from 'hapi'
-import * as Joi from 'joi'
-import * as Boom from 'boom'
+import * as Hapi from 'hapi';
+import * as Joi from 'joi';
+import * as Boom from 'boom';
 
-import { inject } from 'inversify'
-import { provide } from '@cashfarm/plow'
-import { IController } from '@cashfarm/tractor/interfaces'
-import { Endpoint } from '@cashfarm/tractor/decorators'
+import { inject } from 'inversify';
+import { provide } from '@cashfarm/plow';
+import { IController } from '@cashfarm/tractor/interfaces';
+import { Endpoint } from '@cashfarm/tractor/decorators';
 
 import { Todo } from './domain/todo';
 import { TodoStore } from './data/todoStore';
