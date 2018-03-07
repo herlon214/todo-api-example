@@ -1,10 +1,10 @@
 // tslint:disable:no-console
 // tslint:disable:no-import-side-effect
-import 'source-map-support/register';
+import 'source-map-support/register'
 
-import { createServer, ITractorServer } from '@cashfarm/tractor';
+import { createServer, ITractorServer } from '@cashfarm/tractor'
 
-export const ServiceName = 'TodoService';
+export const ServiceName = 'TodoService'
 
 export const server = createServer(
   // Service name
@@ -15,17 +15,17 @@ export const server = createServer(
     port: process.env.PORT
   }
 )
-.then(srv => {
+.then( (srv: any) => {
   // If your are using @Controller decorator, just require your controllers
-  require('./todoCtrl');
+  require('./todoCtrl')
 
   // if running directly, start the server
   if (!module.parent) {
     srv.start(() => {
-      console.log(`✅ Started ${ServiceName} microservice on ${srv.info.uri}`);
+      console.log(`✅ Started ${ServiceName} microservice on ${srv.info.uri}`)
     });
   }
 
   // if importing, return the server (used for testing)
-  return srv;
-});
+  return srv
+})
