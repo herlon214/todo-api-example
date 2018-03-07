@@ -8,7 +8,8 @@ services:
       - MYSQL_ROOT_PASSWORD=onetwothree
       - MYSQL_DATABASE=todos
       - MYSQL_USER=root
-
+    volumes:
+      - ../db:/var/lib/mysql
   adminer:
     image: adminer
     restart: always
@@ -22,7 +23,7 @@ services:
     working_dir: /opt/app
     environment:
       - TODOS_DB_NAME=todos
-      - TODOS_DB_HOST=localhost
+      - TODOS_DB_HOST=db
       - TODOS_DB_USER=root
       - TODOS_DB_PASS=onetwothree
       - TODOS_DB_PORT=3306

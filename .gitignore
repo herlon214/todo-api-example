@@ -24,3 +24,5 @@ npm-debug.log
 
 deploy\.sh
 .env
+
+db
