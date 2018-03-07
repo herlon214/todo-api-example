@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "[ running container ]"
+docker-compose --file=docker/compose.dev.yml up -d
+
+echo "[ installing deps ]"
+docker exec todo_api_example yarn
+
+echo "[ opening container's bash ]"
+docker exec -it todo_api_example bash
+
+echo "[ stopping container ]"
+docker stop todo_api_example

@@ -1,6 +1,6 @@
 // tslint:disable:no-console
 // tslint:disable:no-import-side-effect
-import 'source-map-support/register';
+import 'source-map-support/register'
 
 import { createServer, ITractorServer } from '@cashfarm/tractor';
 import { IEventStore, EventBus, RabbitMQTransport, IEventBus } from '@cashfarm/plow';
@@ -10,7 +10,7 @@ import { PlowConfig } from '@cashfarm/plow';
 
 PlowConfig.appPackageName = '@cashfarm/examples-todo-api';
 
-export const ServiceName = 'TodoService';
+export const ServiceName = 'TodoService'
 
 export const server = createServer(
   // Service name
@@ -18,12 +18,12 @@ export const server = createServer(
   // Options
   {
     apiPrefix: '/todos/v1',
-    port: 8000
+    port: process.env.PORT
   }
 )
-.then(srv => {
+.then( (srv: any) => {
   // If your are using @Controller decorator, just require your controllers
-  require('./todoCtrl');
+  require('./todoCtrl')
 
   const container = srv.getContainer();
 
@@ -33,10 +33,10 @@ export const server = createServer(
   // if running directly, start the server
   if (!module.parent) {
     srv.start(() => {
-      console.log(`✅ Started ${ServiceName} microservice on ${srv.info.uri}`);
+      console.log(`✅ Started ${ServiceName} microservice on ${srv.info.uri}`)
     });
   }
 
   // if importing, return the server (used for testing)
-  return srv;
-});
+  return srv
+})
