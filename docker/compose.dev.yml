@@ -20,7 +20,7 @@ services:
     ports:
       - 8080:8080
 
-  todo_api:
+  todo_api_example:
     container_name: todo_api_example
     image: node:8.9.4
     command: tail -f /dev/null
