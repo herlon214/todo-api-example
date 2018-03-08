@@ -9,7 +9,7 @@ services:
       - MYSQL_DATABASE=todos
       - MYSQL_USER=root
     volumes:
-      - ../db:/var/lib/mysql
+      - ../data/mysql:/var/lib/mysql
 
   eventstore:
       image: eventstore
