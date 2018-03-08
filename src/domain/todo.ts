@@ -20,6 +20,10 @@ export class Todo extends ESAggregateRoot<Guid> {
     return this._done;
   }
 
+  public get id(): Guid {
+    return this._id;
+  }
+
   public get description(): string {
     return this._description;
   }
