@@ -10,13 +10,17 @@ services:
       - MYSQL_USER=root
     volumes:
       - ../db:/var/lib/mysql
+
+  eventstore:
+      image: eventstore
+
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
 
-  banking-unlocker:
+  todo_api:
     container_name: todo_api_example
     image: node:8.9.4
     command: tail -f /dev/null
@@ -26,7 +30,7 @@ services:
       - TODOS_DB_HOST=db
       - TODOS_DB_USER=root
       - TODOS_DB_PASS=onetwothree
-      - TODOS_DB_PORT=3306
+      - TODOS_ES_HOST=eventstore
     ports:
       - 8000:8000
     volumes:
