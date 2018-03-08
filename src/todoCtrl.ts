@@ -45,7 +45,11 @@ export class TodoController {
     if (req.payload.done)
       todo.complete();
 
-    return reply(this.store.save(todo));
+    return reply({
+      message: 'Todo Created',
+      id: todo.id,
+      description: todo.description
+    });
   }
 
   @Endpoint('GET', '/todos/{id}', {
