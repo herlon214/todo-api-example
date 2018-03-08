@@ -60,12 +60,8 @@ export class TodoStore extends MysqlStore<TodosTable, TodoDto> {
         .then(() => todo);
     }
 
-    const todoDto = new TodoDto();
+    debug('Saving todo:', todo);
 
-    hydrate(todoDto, todo);
-
-    debug('Saving todo:', todoDto);
-
-    return super.create(todoDto).then(() => todo);
+    return super.create(todo).then(() => todo);
   }
 }
