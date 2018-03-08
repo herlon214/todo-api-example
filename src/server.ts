@@ -21,7 +21,7 @@ export const server = createServer(
     port: 8000
   }
 )
-.then(srv => {
+.then((srv: any) => {
   // If your are using @Controller decorator, just require your controllers
   require('./todoCtrl');
 
